@@ -10,6 +10,11 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+
+  images: {
+    loader: "default",
+    domains: ["localhost", "https://cloudinary.com/"],
+  },
 }
 
 module.exports = nextConfig
