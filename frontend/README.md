@@ -15,10 +15,43 @@ yarn dev
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 #### Steps 
+
+- 1. Create App using nextjs
 1. In the project folder
 ```
 yarn create react-app frontend 
 ```
 [Getting Started- Nextjs](https://nextjs.org/docs)
 
-2. 
+
+2. Add Sass 
+```
+yarn add sass
+```
+Add Configuration for sass Compiler in sass options
+```
+/** @type {import('next').NextConfig} */
+
+//add path required for sassOptions
+const path = require('path')
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+}
+
+module.exports = nextConfig
+
+
+
+```
+
+
+#### Lessons Learned
+
+1. Nav 
+-[const-MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
