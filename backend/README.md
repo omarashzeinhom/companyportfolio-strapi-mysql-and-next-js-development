@@ -1,29 +1,34 @@
 ## Steps 
 -CUSTOM NEXT JS AND MYSQL STRAPI E-COMMERCE SHOP
+<small>
+📝 Note:
+<em>
+The quick start installation sets up Strapi with a SQLite database. Other databases and installation options are available (see CLI installation guide).
+</em>
+</small>
 
--WHY STRAPI AND MYSQL -- CMS AND GREAT SCALING WITH MYSQL
+-WHY STRAPI AND MYSQL -- CMS AND GREAT SCALING WITH MYSQL 
 
-### Project Requirements
+# 1. Project Requirements
 1. [MySQL-Community Server](https://dev.mysql.com/downloads/mysql/)
-2. [Node-Js]()
-3. []()
+2. [Node-Js](https://nodejs.org/en/)
+3. [VsCode](https://code.visualstudio.com/)
 
 
-### MySql Installation Steps
+## 2. MySql Installation Steps
 1. Download the Installer For Windows/Mac/Linux
 2. Setup Product Configuration Automatically with default settings
 3. Setup Authentication Method to be V5. since that strapi does not support V8 according to strapi author
 [(Razvan,Cretu,2022)- Configuring Strapi and MySQL ](https://strapi.io/blog/configuring-strapi-mysql-database)
 4. Setup Password for Root User
 
-If Skipped the authentication step 
-
+If Skipped Step 3 Dont Worry Reconfigure the authentication step 
 1. Just run the installer again 
 2. press on the Quick action reconfigure MySqlServer
 3. Select the authentication method to be V5 in step 2 in re configure and hit next on all :D
 
 
-## Setup Another User 
+### 3. Setup Another User instead of root user
 1. On the left tab of the MySqlCommunityServer
 2. Select Users and Privileges
 3. Then Add Account on the bottom left
@@ -32,11 +37,7 @@ If Skipped the authentication step
 6. SELECT DBA [Database Admin] From Admin Roles Tab
 
 
-[(Razvan,Cretu,2022)- Configuring Strapi and MySQL ](https://strapi.io/blog/configuring-strapi-mysql-database)
-
-
-
-1. Configure the MySQL DB 
+#### 4. Configure the MySQL DB 
 
 ```
 // in mysql community server connection 
@@ -51,14 +52,7 @@ USE strapi__db
 
 
 
-
-
-
-
-
-
-
-## Steps For Connecting BackEnd With Strapi Application 
+##### 5. Steps For Connecting BackEnd With Strapi CMS Admin Panel 
 1. create strapi-app
 ```
 yarn create strapi-app backend
@@ -71,7 +65,32 @@ yarn create strapi-app backend
 6. ADD DB Password
 
 
+<small>
+📝 Note:
+<em>
+Anything goes wrong dontworry you can edit your db settings here
+</em>
+</small>
 
+```
+//path /backend/config/database.js
+module.exports = ({ env }) => ({
+  connection: {
+    client: 'mysql',
+    connection: {
+      host: env('DATABASE_HOST', '127.0.0.1'),
+      port: env.int('DATABASE_PORT', 3306),
+      database: env('DATABASE_NAME', 'strapi__db'),
+      user: env('DATABASE_USERNAME', 'strapi__username'),
+      password: env('DATABASE_PASSWORD', 'strapi__password'),
+      ssl: {
+        rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
+      },
+    },
+    debug: false,
+  },
+})
+```
 [#Configuration examples - Docs Strapi](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/configurations/required/databases.html#configuration-structure)
 
 
@@ -80,21 +99,6 @@ yarn create strapi-app backend
 
 
 
-
-
-
-
-
-
-
-
-
-<small>
-📝 Note:
-<em>
-The quick start installation sets up Strapi with a SQLite database. Other databases and installation options are available (see CLI installation guide).
-</em>
-</small>
 
 
 
