@@ -1,16 +1,104 @@
-# 🚀 Getting started with Strapi
+## Steps 
+-CUSTOM NEXT JS AND MYSQL STRAPI E-COMMERCE SHOP
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+-WHY STRAPI AND MYSQL -- CMS AND GREAT SCALING WITH MYSQL
 
-### `develop`
+### Project Requirements
+1. [MySQL-Community Server](https://dev.mysql.com/downloads/mysql/)
+2. [Node-Js]()
+3. []()
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+
+### MySql Installation Steps
+1. Download the Installer For Windows/Mac/Linux
+2. Setup Product Configuration Automatically with default settings
+3. Setup Authentication Method to be V5. since that strapi does not support V8 according to strapi author
+[(Razvan,Cretu,2022)- Configuring Strapi and MySQL ](https://strapi.io/blog/configuring-strapi-mysql-database)
+4. Setup Password for Root User
+
+If Skipped the authentication step 
+
+1. Just run the installer again 
+2. press on the Quick action reconfigure MySqlServer
+3. Select the authentication method to be V5 in step 2 in re configure and hit next on all :D
+
+
+## Setup Another User 
+1. On the left tab of the MySqlCommunityServer
+2. Select Users and Privileges
+3. Then Add Account on the bottom left
+4. Add New Login Name: strapi__nextjs__user
+5. Add New Password : strapi__nextjs__password
+6. SELECT DBA [Database Admin] From Admin Roles Tab
+
+
+[(Razvan,Cretu,2022)- Configuring Strapi and MySQL ](https://strapi.io/blog/configuring-strapi-mysql-database)
+
+
+
+1. Configure the MySQL DB 
 
 ```
-npm run develop
-# or
-yarn develop
+// in mysql community server connection 
+CREATE DATABASE strapi__db
 ```
+
+```
+USE strapi__db 
+```
+
+[3.3.1 Creating and Selecting a Database](https://dev.mysql.com/doc/refman/8.0/en/creating-database.html)
+
+
+
+
+
+
+
+
+
+
+## Steps For Connecting BackEnd With Strapi Application 
+1. create strapi-app
+```
+yarn create strapi-app backend
+```
+[#Quick Start Guide - Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project)
+2. Select Manual Installation
+3. Select MySql 
+4. Add DB Name 
+5. ADD DB User 
+6. ADD DB Password
+
+
+
+[#Configuration examples - Docs Strapi](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/configurations/required/databases.html#configuration-structure)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<small>
+📝 Note:
+<em>
+The quick start installation sets up Strapi with a SQLite database. Other databases and installation options are available (see CLI installation guide).
+</em>
+</small>
+
+
+
+### Start By 🚀 
 
 ### `start`
 
@@ -32,9 +120,25 @@ npm run build
 yarn build
 ```
 
+### `develop`
+
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+
+```
+npm run develop
+# or
+yarn develop
+```
+
 ## ⚙️ Deployment
 
 Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+
+
+
+
+
+
 
 ## 📚 Learn more
 
@@ -46,12 +150,4 @@ Strapi gives you many possible deployment options for your project. Find the one
 
 Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
 
-## ✨ Community
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
