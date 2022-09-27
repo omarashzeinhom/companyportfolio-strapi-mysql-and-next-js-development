@@ -5,15 +5,15 @@ import variables from "../../styles/variables.module.scss";
 const Nav = () => {
   return (
     <nav>
-      <ul>
+      <ul className={variables.primaryColor}>
         {Navitems.map((item, index) => (
-          <>
-            <li className={variables.primaryColor}>
+ 
+            <li key={item + index} >
               <Link href={item?.link}>
                 <a>{item?.title}</a>
               </Link>
             </li>
-          </>
+      
         ))}
       </ul>
     </nav>
