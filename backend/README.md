@@ -27,6 +27,10 @@ If Skipped Step 3 Dont Worry Reconfigure the authentication step
 2. press on the Quick action reconfigure MySqlServer
 3. Select the authentication method to be V5 in step 2 in re configure and hit next on all :D
 
+- Finally CREATE THE MYSQL DB
+```
+ CREATE DATABASE strapi_mysql_db
+```
 
 ### 3. Setup Another User instead of root user
 1. On the left tab of the MySqlCommunityServer
@@ -37,15 +41,15 @@ If Skipped Step 3 Dont Worry Reconfigure the authentication step
 6. SELECT DBA [Database Admin] From Admin Roles Tab
 
 
-#### 4. Configure the MySQL DB 
+#### 4. Configure the MySQL DB for backend 
 
 ```
 // in mysql community server connection 
-CREATE DATABASE strapi__db
+CREATE DATABASE strapi_mysql_db
 ```
 
 ```
-USE strapi__db 
+USE strapi_mysql_db
 ```
 
 [3.3.1 Creating and Selecting a Database](https://dev.mysql.com/doc/refman/8.0/en/creating-database.html)
